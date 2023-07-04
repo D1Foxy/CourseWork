@@ -1,0 +1,145 @@
+﻿<Window x:Class="CourseWork.AddStudentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CourseWork"
+        mc:Ignorable="d"
+        
+        Height="300"
+        Width="500"
+        MinHeight="200"
+        MinWidth="400"
+        MaxHeight="400"
+        MaxWidth="600"
+        
+        Title="Добавление/редактирование студента"
+        Icon="Resources/icon.ico"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid RenderTransformOrigin="0.498,0.528">
+        <StackPanel Orientation="Horizontal"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center" Width="362">
+
+            <StackPanel VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Margin="10">
+
+                <StackPanel>
+                    <TextBlock Margin="1" 
+                               Height="27" 
+                               Width="100" 
+                               Text="Фамилия"/>
+                    <TextBox Name="surnameBox"
+                             Margin="1"
+                             Height="27"
+                             Text="{Binding Surname}"/>
+                </StackPanel>
+
+                <StackPanel>
+                    <TextBlock  Margin="1"
+                                Height="27"
+                                Text="Имя"/>
+                    <TextBox Name="nameBox"
+                             Margin="1"
+                             Height="27"
+                             Text="{Binding Name}"/>
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock  Margin="1"
+                                Height="27"
+                                Text="Отчество"/>
+                    <TextBox Name="patronymicBox"
+                             Margin="1"
+                             Height="27"
+                             Text="{Binding Patronymic}"/>
+                </StackPanel>
+
+            </StackPanel>
+
+
+            <StackPanel Margin="10"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+
+
+                <StackPanel>
+                    <TextBlock Margin="1"
+                               Height="27"
+                               Width="100"
+                               Text="Год (ГГГГ-ММ-ДД)"/>
+                    <TextBox Name="dobBox"
+                             Margin="1"
+                             Height="27"
+                             Text="{Binding DoB}"/>
+                </StackPanel>
+
+
+                <StackPanel>
+                    <TextBlock Margin="1"
+                               Height="27"
+                               Width="100"
+                               Text="Группа"/>
+                    <TextBox Name="gruppaBox"
+                             Margin="1"
+                             Height="27"
+                             Text="{Binding Gruppa}"/>
+                </StackPanel>
+
+                <StackPanel>
+                    <TextBlock Margin="1"
+                               Height="27"
+                               Width="100"
+                               Text="Средний балл"/>
+                    <TextBox Name="gpaBox"
+                             Margin="1"
+                             Height="27"
+                             Text="{Binding Gpa}"/>
+                </StackPanel>
+
+
+            </StackPanel>
+
+            <StackPanel Margin="10"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+
+                <TextBlock  Margin="1" 
+                            Height="19" 
+                            Text="Фото"/>
+
+                <TextBox Name="imageBox"
+                         Margin="1"
+                         Height="20"
+                         IsReadOnly="True"
+                         Visibility="Collapsed"
+                         Text="{Binding Photo}"/>
+
+                <Border Margin="1"
+                        Height="91"
+                        Width="68"
+                        BorderBrush="#4081d5"
+                        BorderThickness="2" RenderTransformOrigin="0.488,0.577"
+                        >
+                    <Image Name="imageBoxPath"
+                           Margin="1,1,1,1"
+                           
+                           Source="{Binding ImagePath}" RenderTransformOrigin="0.503,0.555"/>
+                </Border>
+
+
+                <Button Height="20"
+                        Margin="0 10 0 0"
+                        Content="Добавить"
+                        Click="AddImageToStudent"/>
+
+                <Button Margin="0 10 0 0"
+                        Height="20"
+                        Content="Сохранить"
+                        Click="saveProductButtonClick"/>
+
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
